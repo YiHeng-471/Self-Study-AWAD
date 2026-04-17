@@ -1,4 +1,4 @@
-<h1>This is an about page</h1>
+<x-header data="About" />
 
 <nav>
     <ul style="display: flex; gap: 1rem; list-style: none; padding: 0;">
