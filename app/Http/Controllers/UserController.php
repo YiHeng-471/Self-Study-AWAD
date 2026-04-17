@@ -11,7 +11,7 @@ class UserController extends Controller
 
     public function testData() {
         // return DB::select('SELECT * FROM users');
-        $data = User::all();
+        $data = User::paginate(5);
         return view('user', ['users' => $data]);
     }
 
@@ -26,5 +26,27 @@ class UserController extends Controller
         $user->save();
 
         return redirect('datatest');    
+    }
+
+    public function deleteUser($id) {
+        // $user = User::destroy($id);
+        $user = User::find($id);
+        $user->delete();
+        return redirect('datatest');
+    }
+
+    public function getUser($id) {
+        $user = User::find($id);
+
+        return view('editUser', compact('user'));
+    }
+
+    public function updateUser(Request $req) {
+        $user = User::find($req->id);
+        $user->name = $req->name;
+        $user->email = $req->email;
+        $user->save();
+
+        return redirect('datatest');
     }
 }

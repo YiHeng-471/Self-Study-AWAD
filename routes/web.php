@@ -14,6 +14,11 @@ use App\Http\Controllers\UserController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/deleteUser/{id}', [UserController::class, 'deleteUser']);
+
+Route::get('/editUser/{id}', [UserController::class, 'getUser']);
+Route::post('editUser', [UserController::class, 'updateUser']);
+
 Route::post('/addUser', [UserController::class, 'addNewUser']);
 
 Route::get('/addUser', function () {
