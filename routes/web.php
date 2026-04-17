@@ -20,12 +20,12 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/{username}', function ($username) {
-    return view('welcome', ['username' => $username]);
-});
-
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/{username}', function ($username) {
+    return view('welcome', ['username' => $username]);
 });
 
 Auth::routes();
