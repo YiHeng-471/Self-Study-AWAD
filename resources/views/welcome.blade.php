@@ -21,11 +21,14 @@
         </style>
     </head>
     <body class="antialiased">
-        @if (isset($username))
-            <h1>Welcome, {{ $username }}!</h1>
-        @else
-            <h1>Welcome to our website!</h1>
-        @endif
+        <nav>
+            <ul style="display: flex; gap: 1rem; list-style: none; padding: 0;">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+        <h1>Hi {{ $username ?? 'Guest'}}</h1>
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
