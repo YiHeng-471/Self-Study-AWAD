@@ -14,7 +14,7 @@ use App\Http\Controllers\UserController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('users/{user}', [UserController::class, 'index']);
+Route::get('users/{username}', [UserController::class, 'index']);
 
 Route::view('/about', 'about');
 Route::get('/contact', function () {
